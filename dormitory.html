@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--文档使用的编码-->
+    <meta charset="UTF-8">
+    <!--为移动设备添加viewport-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--优先使用IE最新版本和chrome-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="applicable-device" content="pc,mobile">
+    <!--<meta name="MobileOptimized" content="width">-->
+    <title>宿舍争霸</title>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="dormitory.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<!--banner-->
+<div class="banner">
+
+</div>
+<div id="mesbox">
+    <!--投票信息-->
+    <ul id="votemes">
+        <li>
+            <div class="num" id="num1">666666</div>
+            <p>参与宿舍</p>
+        </li>
+        <li>
+            <div class="num" id="num2">3333333</div>
+            <p>累计投票</p>
+        </li>
+        <li>
+            <div class="num" id="num3">123450</div>
+            <p>累计访问</p>
+        </li>
+    </ul>
+    <!--奖项说明-->
+    <div id="prize">
+        <div class="top">
+            <div class="topleft">
+                <img src="img/border.png" alt="">
+                <div class="text">奖项说明</div>
+            </div>
+        </div>
+        <ul id="prizemes">
+            <li><span>一等奖：</span><span>打算将积极回复就会返回韩国韩国国会</span></li>
+            <li><span>二等奖：</span><span>打算将积极回复就会返回韩国大的地方烦烦烦烦烦烦韩国国会</span></li>
+            <li><span>三等奖：</span><span>打算将积极回复就会返回v放大法如图5韩国韩国国会</span></li>
+        </ul>
+    </div>
+    <!--活动规则-->
+    <div id="activity">
+        <div class="top">
+            <div class="topleft">
+                <img src="img/border.png" alt="">
+                <div class="text">活动规则</div>
+            </div>
+        </div>
+        <ul id="prizemes1">
+            <li><span>投票时间：</span><span>打算将积极回复就会返回韩国韩国国会</span></li>
+            <li><span>投票规则：</span><span>打算将积极回复就会返回韩国大的地方烦烦烦烦烦烦韩国国会</span></li>
+        </ul>
+        <div class="more"><span class="span1">展开更多</span>&nbsp;<span class="icon">></span>&nbsp;</div>
+    </div>
+    <!--投票区-->
+    <div id="voteAnddepartmen">
+        <div class="votetext">投票区</div>
+        <div class="inputbox">
+            <form action="" onsubmit="return false;">
+                <input type="search" placeholder="请输入宿舍编号或宿舍名称" autocomplete="off">
+            </form>
+            <div id="searchbox">搜索</div>
+        </div>
+        <!--宿舍列表-->
+        <ul id="drombox">
+            <li>
+                <div class="number">1112号</div>
+                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <span class="p1">美少女组合</span>
+                <span class="p2">南风四斋8206</span>
+                <div class="votebtn">
+                    <span>1123票</span>
+                    <div>投票</div>
+                </div>
+            </li>
+            <li>
+                <div class="number">1113号</div>
+                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <span class="p1">蛇精病</span>
+                <span class="p2">南风五斋10206</span>
+                <div class="votebtn">
+                    <span>1123票</span>
+                    <div>投票</div>
+                </div>
+            </li>
+            <li>
+                <div class="number">1216号</div>
+                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <span class="p1">经典之家</span>
+                <span class="p2">南风四斋9612</span>
+                <div class="votebtn">
+                    <span>1123票</span>
+                    <div>投票</div>
+                </div>
+            </li>
+            <li>
+                <div class="number">1420号</div>
+                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <span class="p1">群居动物</span>
+                <span class="p2">南风一斋1206</span>
+                <div class="votebtn">
+                    <span>1123票</span>
+                    <div>投票</div>
+                </div>
+            </li>
+            <li>
+                <div class="number">1112号</div>
+                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <span class="p1">美少女战士</span>
+                <span class="p2">南风二斋6206</span>
+                <div class="votebtn">
+                    <span>1123票</span>
+                    <div>投票</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+
+    var numbers=$('.number');
+    var votebuildings=$('.p1');
+    var votenames=$('.p2');
+    /*合并对象*/
+    var allvotes=[]
+    function extend(obj){
+        for(var i=0;i<obj.length;i++){
+            allvotes.push(obj[i])
+        }
+    }
+    extend(numbers);extend(votebuildings);extend(votenames);
+    /*搜索*/
+    $('.inputbox input').change(function(){
+        var that=this;
+        $('#searchbox').on('click',function(){
+            for(var i=0;i<allvotes.length;i++){
+                if($(allvotes[i]).html().indexOf($(that).val()) > -1){
+                    console.log($(allvotes[i]))
+                }
+            }
+        });
+        $(document).keydown(function(e){
+            if(e.keyCode == 13){
+                for(var i=0;i<allvotes.length;i++){
+                    if($(allvotes[i]).html().indexOf($(that).val()) > -1){
+                        console.log($(allvotes[i]).html())
+                    }
+                }
+            }
+        })
+    })
+    /*查看更多的活动信息*/
+    var flag=false;
+    $('.more').on('click',function () {
+        if(flag==false){
+            $(this).prev().css({'overflow':'visible','height':'auto'});
+            $(this).children('.span1').html('收起');
+            $(this).children('.icon').css({'transform':'rotate(-90deg)','display':'inline-block'})
+            flag=true;
+        }else if(flag==true){
+            $(this).prev().css({'overflow':'hidden','height':'1.2rem'});
+            $(this).children('.span1').html('展开更多');
+            $(this).children('.icon').css({'transform':'rotate(90deg)','display':'inline-block'})
+            flag=false;
+        }
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

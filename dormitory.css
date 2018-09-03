@@ -1,0 +1,269 @@
+@media (min-device-width:320px) and (max-width:689px),
+(max-device-width:480px) and (orientation:portrait) {
+    html, body {
+        background: -webkit-linear-gradient(left, #FF8731, #FF545C);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        letter-spacing:0.01rem;
+    }
+    /*banner*/
+    .banner {
+        width: 100%;
+        height: 3.8rem;
+        background: url('img/banner.png') no-repeat center/cover;
+    }
+    /*大盒子*/
+    #mesbox{padding:0 0.18rem 0.18rem 0.18rem;}
+    /*投票信息*/
+    #votemes{
+        width:100%;
+        height:1.2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #votemes li {
+        width: 30%;
+        height: 0.66rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+    #votemes li .num {
+        width: 100%;
+        height: 0.32rem;
+        color: #fff;
+        text-align: center;
+        font-size: 0.3rem;
+        line-height: 0.3rem;
+        font-weight: bold;
+    }
+    #votemes li p {
+        width: 100%;
+        height: 0.26rem;
+        color: #fff;
+        text-align: center;
+        font-size: 0.26rem;
+    }
+    /*奖项说明*/
+    #prize{
+        padding: 0.17rem;
+        background: #fff;
+        border-radius: 0.1rem;
+        margin: 0 auto;
+        margin-top: 0.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        box-shadow: 0rem 0rem 0.2rem #F9CFD3;
+    }
+    .top {
+        width: 100%;
+        height: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .topleft img {
+        width: 0.08rem;
+        height: auto;
+        display: block;
+        float: left;
+    }
+
+    .topleft .text {
+        font-size: 0.26rem;
+        color: #333333;
+        float: left;
+        line-height: 0.4rem;
+        margin-left: 0.1rem;
+    }
+    #prizemes,#prizemes1{
+        width: 100%;
+        margin-top: 0.15rem;
+        overflow: hidden;
+    }
+    #prizemes1{height:1.2rem}
+    #prizemes li span:nth-of-type(1){width:1.1rem;}
+    #prizemes1 li span:nth-of-type(1){width:1.5rem}
+    #prizemes li span:nth-of-type(2),#prizemes1 li span:nth-of-type(2){width:calc(100% - 1.1rem);}
+    #prizemes li,#prizemes1 li {
+        width: 100%;
+        font-size: 0.26rem;
+        color: #333333;
+        line-height: 0.47rem;
+        display: flex;
+        justify-content: center;
+    }
+    .more {
+        font-size: 0.26rem;
+        color: #999999;
+        line-height: 0.4rem;
+        width: 100%;
+        height:0.4rem;
+        text-align: right;
+    }
+
+    .more .icon {
+        display: inline-block;
+        transform: rotate(90deg)
+    }
+
+    /*活动规则*/
+    #activity{
+        padding: 0.17rem;
+        background: #fff;
+        border-radius: 0.1rem;
+        margin: 0 auto;
+        margin-top: 0.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        box-shadow: 0rem 0rem 0.2rem #F9CFD3;
+    }
+    /*投票区*/
+    #voteAnddepartmen{width:100%;}
+    .votetext{
+        font-size: 0.4rem;
+        text-align: center;
+        line-height: 1.15rem;
+        color:#fff;
+        font-weight: bold;
+    }
+    form{
+        width:100%;
+    }
+    .inputbox{
+        width:100%;
+        height:0.8rem;
+        position:relative;
+    }
+    #voteAnddepartmen input{
+        display:block;
+        padding:0.2rem;
+        width:100%;
+        height:0.8rem;
+        border-radius:0.5rem;
+        box-shadow: inset 0 0.05rem 0.1rem rgba(255, 11, 11, 0.2);
+        outline: none;
+        border:none;
+        font-size:0.26rem
+    }
+    ::-webkit-input-placeholder{/*Webkit browsers*/
+        color:#999999;
+        font-size:0.26rem;
+    }
+    :-moz-placeholder { /*Mozilla Firefox 4 to 8*/
+        color: #999999;
+        font-size: 0.26rem;
+    }
+    :-ms-input-placeholder{/*Internet Explorer 10+*/
+        color:#999999;
+        font-size:0.26rem;
+    }
+    input[type=search]::-webkit-search-cancel-button{
+        -webkit-appearance: none;/*此处只是去掉默认的小×*/
+    }
+    input[type="search"]::-webkit-search-cancel-button{
+        display: none;
+    }
+    #searchbox{
+        width:1.2rem;
+        height:0.6rem;
+        background: #FF8731;
+        border-radius: 0.5rem;
+        color:#fff;
+        font-size:0.26rem;
+        text-align: center;
+        line-height: 0.6rem;
+        position:absolute;
+        top:0.1rem;right:0.1rem;
+    }
+    /*宿舍列表*/
+    #drombox{
+        width:100%;
+        height:auto;
+        border-radius: 0.1rem;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        margin-bottom:0.17rem;
+    }
+    #drombox li{
+        width:49%;
+        height:4rem;
+        border-radius: 0.1rem;
+        margin-top:0.17rem;
+        overflow:hidden;
+        position:relative;
+        background: #fff;
+    }
+    #drombox li .number{
+        width:1rem;
+        height:calc(1.3rem - 0.7rem);
+        padding-top:0.7rem;
+        font-size:0.24rem;
+        color:#fffefe;
+        background: rgba(0,0,0,0.4);
+        position:absolute;
+        top:-0.6rem;left:0.24rem;
+        text-align: center;
+        border-radius: 0.5rem;
+    }
+    #drombox li .imgbox{
+        width:100%;
+        height:2.2rem;
+        overflow: hidden;
+    }
+    #drombox li img{
+        width:100%;
+        height:auto;
+    }
+    #drombox li .p1,#drombox li .p2{
+        height:0.44rem;
+        display:block;
+        color:#333333;
+        font-size:0.28rem;
+        text-align:center;
+        line-height: 0.44rem;
+        margin-top:0.1rem;
+    }
+    #drombox li .p2{
+        height:0.42rem;
+        font-size:0.24rem;
+        color:#999999;
+        text-align: center;
+        margin-top:-0.05rem;
+    }
+    .votebtn{
+        height:0.56rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+        margin-top:0.1rem;
+        display:flex;
+        justify-content: space-between;
+    }
+    .votebtn span{
+        font-size:0.3rem;
+        color:#ff545b;
+        line-height: 0.56rem;
+    }
+    .votebtn div{
+        width:1.5rem;
+        height:100%;
+        background: -webkit-linear-gradient(0deg, #FF8731 50%, #FF545C);
+        font-size:0.24rem;
+        color:#ffff;
+        border-radius:0.5rem;
+        text-align: center;
+        line-height: 0.56rem;
+    }
+
+
+}
