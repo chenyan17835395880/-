@@ -90,8 +90,8 @@
         overflow: hidden;
     }
     #prizemes1{height:1.2rem}
-    #prizemes li span:nth-of-type(1){width:1.1rem;}
-    #prizemes1 li span:nth-of-type(1){width:1.5rem}
+    #prizemes li span:nth-of-type(1){width:1.2rem;}
+    #prizemes1 li span:nth-of-type(1){width:1.6rem}
     #prizemes li span:nth-of-type(2),#prizemes1 li span:nth-of-type(2){width:calc(100% - 1.1rem);}
     #prizemes li,#prizemes1 li {
         width: 100%;
