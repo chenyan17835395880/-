@@ -145,8 +145,14 @@
     }
     extend(numbers);extend(votebuildings);extend(votenames);
     /*搜索*/
-    $('.inputbox input').on('input',function(){
+    $('.inputbox input').bind('input propertychange' ,function(){
         var that=this;
+        $('#drombox li').hide()
+        for(var i=0;i<allvotes.length;i++){
+            if($(allvotes[i]).html().indexOf($(that).val()) > -1){
+                $(allvotes[i]).parent('li').show();
+            }
+        }
         /*点击输入框右边的搜索键进行搜索*/
         $('#searchbox').on('click',function(){
             $('#drombox li').hide()
