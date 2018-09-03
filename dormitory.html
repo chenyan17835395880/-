@@ -132,7 +132,7 @@
     </div>
 </div>
 <script>
-
+    /*投票区的搜索*/
     var numbers=$('.number');
     var votebuildings=$('.p1');
     var votenames=$('.p2');
@@ -145,24 +145,32 @@
     }
     extend(numbers);extend(votebuildings);extend(votenames);
     /*搜索*/
-    $('.inputbox input').change(function(){
+    $('.inputbox input').on('input',function(){
         var that=this;
+        /*点击输入框右边的搜索键进行搜索*/
         $('#searchbox').on('click',function(){
+            $('#drombox li').hide()
             for(var i=0;i<allvotes.length;i++){
                 if($(allvotes[i]).html().indexOf($(that).val()) > -1){
-                    console.log($(allvotes[i]))
+                    $(allvotes[i]).parent('li').show();
                 }
             }
         });
+        /*按键盘上的搜索键进行搜索*/
         $(document).keydown(function(e){
             if(e.keyCode == 13){
+                $('#drombox li').hide()
                 for(var i=0;i<allvotes.length;i++){
                     if($(allvotes[i]).html().indexOf($(that).val()) > -1){
-                        console.log($(allvotes[i]).html())
+                        $(allvotes[i]).parent('li').show();
                     }
                 }
             }
         })
+        /*如果把input里面的内容全部删除，显示全部*/
+        if($(that).val() == ''){
+            $('#drombox li').show()
+        }
     })
     /*查看更多的活动信息*/
     var flag=false;
