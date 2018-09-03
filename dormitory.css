@@ -1,7 +1,7 @@
 @media (min-device-width:320px) and (max-width:689px),
 (max-device-width:480px) and (orientation:portrait) {
     html, body {
-        background: -webkit-linear-gradient(left, #FF8731, #FF545C);
+        background: -webkit-linear-gradient(left, #FF8731, #FF5D62);
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
     * {
@@ -181,7 +181,7 @@
         color:#fff;
         font-size:0.26rem;
         text-align: center;
-        line-height: 0.6rem;
+        line-height: 0.62rem;
         position:absolute;
         top:0.1rem;right:0.1rem;
     }
@@ -242,7 +242,7 @@
         margin-top:-0.05rem;
     }
     .votebtn{
-        height:0.56rem;
+        height:0.6rem;
         padding-left: 0.2rem;
         padding-right: 0.2rem;
         margin-top:0.1rem;
@@ -257,9 +257,9 @@
     .votebtn div{
         width:1.5rem;
         height:100%;
-        background: -webkit-linear-gradient(0deg, #FF8731 50%, #FF545C);
-        font-size:0.24rem;
-        color:#ffff;
+        background: -webkit-linear-gradient(0deg, #FF8731 49%, #FF5D62);
+        font-size:0.26rem;
+        color:#ffffff;
         border-radius:0.5rem;
         text-align: center;
         line-height: 0.56rem;
