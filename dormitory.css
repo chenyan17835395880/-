@@ -345,7 +345,7 @@
         line-height: 0.4rem;
         margin-top:0.1rem;
     }
-
+    /*图片放大*/
     .big_img{position: fixed;z-index: -1;opacity: 0;background: rgba(0,0,0,0.9);width: 100%;height: 100%;top:0;left:0;}
     .big_img .swiper-container2 {position: relative;width: 100%;height: 100%;}
     .big_img .swiper-container2  .swiper-wrapper{width: 100%;height: 100%;}
@@ -354,6 +354,14 @@
     .big_img .swiper-slide img{max-width: 90%;max-height: 80%;margin:0 auto;}
     .big_img .swiper-pagination2{position: absolute; top:0.2rem;text-align: center;width: 100%;}
     .big_img .swiper-pagination2 span{margin:0 0.05rem;}
-
+    /*上拉刷新*/
+    .dropload-down{
+        font-size:0.3rem;
+        color:#ffffff;
+        text-align: center;
+    }
+    .dropload-refresh{
+        line-height: 0.5rem;
+    }
 
 }

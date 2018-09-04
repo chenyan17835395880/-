@@ -16,10 +16,12 @@
     <title>宿舍争霸</title>
     <script src="js/rem.js"></script>
     <link rel="stylesheet" href="dormitory.css">
-    <link rel="stylesheet" href="jquery.hiSlider.min.css">
-    <link rel="stylesheet" href="swiper.min.css">
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <!--轮播图-->
+    <link rel="stylesheet" href="jquery.hiSlider.min.css">
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <!--图片放大-->
+    <link rel="stylesheet" href="swiper.min.css">
     <script src="js/swiper.min.js"></script>
 </head>
 <body>
@@ -160,7 +162,33 @@
 
 <script src="http://www.jq22.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/jquery.hiSlider.min.js"></script>
+<script src="js/dropload.min.js"></script>
 <script>
+    /*宿舍列表*/
+    function render(){
+        var str='';
+        str+='<li><div class="number">1112号</div><div class="imgbox"><img src="img/形状18拷贝2@2x.png" alt=""></div><span class="p1">美少女战士</span><span class="p2">南风二斋6206</span><div class="votebtn"><span>1123票</span><div class="div">投票</div></div></li>';
+
+        return str;
+    }
+    $('#mesbox').dropload({
+        scrollArea : window,
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+            domNoData  : '<div class="dropload-noData">暂无数据</div>'
+        },
+        loadDownFn : function(me){
+           setTimeout(function(){
+               $('#drombox').append(render());
+               // 每次数据加载完，必须重置
+               me.resetload();
+           },1000);
+        }
+    });
+
+
     /*点击查看大图*/
     $(document).ready(function(){
         /*调起大图 S*/
@@ -204,7 +232,7 @@
         }
     });
     $('.hiSlider-pages').css({'left':'50%','marginLeft':-$('.hiSlider-pages').width()/2})
-    /*投票*/
+    /*投票成功弹窗*/
     $('#bigzhe').click(function(){
         $('#voteclick').css('display','none');
         $('#bigzhe').css('display','none')
