@@ -17,8 +17,10 @@
     <script src="js/rem.js"></script>
     <link rel="stylesheet" href="dormitory.css">
     <link rel="stylesheet" href="jquery.hiSlider.min.css">
+    <link rel="stylesheet" href="swiper.min.css">
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="js/swiper.min.js"></script>
 </head>
 <body>
 <!--banner-->
@@ -98,7 +100,7 @@
             </li>
             <li>
                 <div class="number">1113号</div>
-                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <div class="imgbox"><img src="img/形状18@2x.png" alt=""></div>
                 <span class="p1">蛇精病</span>
                 <span class="p2">南风五斋10206</span>
                 <div class="votebtn">
@@ -108,7 +110,7 @@
             </li>
             <li>
                 <div class="number">1216号</div>
-                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <div class="imgbox"><img src="img/border.png" alt=""></div>
                 <span class="p1">经典之家</span>
                 <span class="p2">南风四斋9612</span>
                 <div class="votebtn">
@@ -118,7 +120,7 @@
             </li>
             <li>
                 <div class="number">1420号</div>
-                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <div class="imgbox"><img src="img/形状18拷贝@2x.png" alt=""></div>
                 <span class="p1">群居动物</span>
                 <span class="p2">南风一斋1206</span>
                 <div class="votebtn">
@@ -128,7 +130,7 @@
             </li>
             <li>
                 <div class="number">1112号</div>
-                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
+                <div class="imgbox"><img src="img/形状18拷贝2@2x.png" alt=""></div>
                 <span class="p1">美少女战士</span>
                 <span class="p2">南风二斋6206</span>
                 <div class="votebtn">
@@ -139,16 +141,60 @@
         </ul>
     </div>
 </div>
+<!--投票成功提示-->
 <div id="voteclick">
     <div class="close"><img src="img/close.png" alt=""></div>
     <div class="tips">投票成功</div>
     <div class="tipsmes">感谢水墨河东为大家提供的文创T恤和电影票等奖品</div>
 </div>
 <div id="bigzhe"></div>
+<!--显示大图-->
+<div class="big_img">
+    <div class="swiper-container2">
+        <div class="swiper-wrapper">
+
+        </div>
+    </div>
+    <div class="swiper-pagination2"></div>
+</div>
 
 <script src="http://www.jq22.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/jquery.hiSlider.min.js"></script>
 <script>
+    /*点击查看大图*/
+    $(document).ready(function(){
+        /*调起大图 S*/
+        var mySwiper = new Swiper('.swiper-container2', {
+            loop: false,
+            pagination: '.swiper-pagination2',
+        })
+        $("#drombox").on("click", "li img", function() {
+                var imgBox = $(this).parents("li").find("img");
+                var i = $(imgBox).index(this);
+                $(".big_img .swiper-wrapper").html("");
+                for(var j = 0 ,c = imgBox.length; j < c ;j++){
+                    $(".big_img .swiper-wrapper").append('<div class="swiper-slide"><div class="cell"><img src="' + imgBox.eq(j).attr("src") + '" / ></div></div>');
+                }
+                mySwiper.updateSlidesSize();
+                mySwiper.updatePagination();
+                $(".big_img").css({
+                    "z-index": 1001,
+                    "opacity": "1"
+                });
+                mySwiper.slideTo(i, 0, false);
+                return false;
+            });
+
+        $(".big_img").on("click",
+            function() {
+                $(this).css({
+                    "z-index": "-1",
+                    "opacity": "0"
+                });
+
+            });
+    });
+    /*调起大图 E*/
     /*轮播*/
     $('.hiSlider3').hiSlider({
         isFlexible: true,
