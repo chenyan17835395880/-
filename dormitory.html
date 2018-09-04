@@ -16,13 +16,21 @@
     <title>宿舍争霸</title>
     <script src="js/rem.js"></script>
     <link rel="stylesheet" href="dormitory.css">
+    <link rel="stylesheet" href="jquery.hiSlider.min.css">
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
 </head>
 <body>
 <!--banner-->
-<div class="banner">
-
-</div>
+<ul class="banner hiSlider hiSlider3">
+    <li data-title="" class="hiSlider-item"><img src="img/4.jpg" alt=""></li>
+    <li data-title="" class="hiSlider-item"><img src="img/banner.png" alt=""></li>
+    <li data-title="" class="hiSlider-item"><img src="img/形状18@2x.png" alt=""></li>
+    <li data-title="" class="hiSlider-item"><img src="img/形状18拷贝2@2x.png" alt=""></li>
+    <li data-title="" class="hiSlider-item"><img src="img/形状18拷贝@2x.png" alt=""></li>
+    <li data-title="" class="hiSlider-item"><img src="img/4.jpg" alt=""></li>
+    <li data-title="" class="hiSlider-item"><img src="img/banner.png" alt=""></li>
+</ul>
 <div id="mesbox">
     <!--投票信息-->
     <ul id="votemes">
@@ -85,7 +93,7 @@
                 <span class="p2">南风四斋8206</span>
                 <div class="votebtn">
                     <span>1123票</span>
-                    <div>投票</div>
+                    <div class="div">投票</div>
                 </div>
             </li>
             <li>
@@ -95,7 +103,7 @@
                 <span class="p2">南风五斋10206</span>
                 <div class="votebtn">
                     <span>1123票</span>
-                    <div>投票</div>
+                    <div class="div">投票</div>
                 </div>
             </li>
             <li>
@@ -105,7 +113,7 @@
                 <span class="p2">南风四斋9612</span>
                 <div class="votebtn">
                     <span>1123票</span>
-                    <div>投票</div>
+                    <div class="div">投票</div>
                 </div>
             </li>
             <li>
@@ -115,7 +123,7 @@
                 <span class="p2">南风一斋1206</span>
                 <div class="votebtn">
                     <span>1123票</span>
-                    <div>投票</div>
+                    <div class="div">投票</div>
                 </div>
             </li>
             <li>
@@ -125,13 +133,45 @@
                 <span class="p2">南风二斋6206</span>
                 <div class="votebtn">
                     <span>1123票</span>
-                    <div>投票</div>
+                    <div class="div">投票</div>
                 </div>
             </li>
         </ul>
     </div>
 </div>
+<div id="voteclick">
+    <div class="close"><img src="img/close.png" alt=""></div>
+    <div class="tips">投票成功</div>
+    <div class="tipsmes">感谢水墨河东为大家提供的文创T恤和电影票等奖品</div>
+</div>
+<div id="bigzhe"></div>
+
+<script src="http://www.jq22.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.hiSlider.min.js"></script>
 <script>
+    /*轮播*/
+    $('.hiSlider3').hiSlider({
+        isFlexible: true,
+        isSupportTouch: true,
+        titleAttr: function(curIdx){
+            return $('img', this).attr('alt');
+        }
+    });
+    /*投票*/
+    $('#bigzhe').click(function(){
+        $('#voteclick').css('display','none');
+        $('#bigzhe').css('display','none')
+    })
+    $('.close').click(function(){
+        $('#voteclick').css('display','none');
+        $('#bigzhe').css('display','none')
+    })
+    $('#drombox').on('click','.votebtn .div',function(){
+        $('#voteclick').css('display','block');
+        $('#bigzhe').css('display','block');
+        $(this).html('已投票');
+        $(this).removeClass('div');
+    })
     /*投票区的搜索*/
     var numbers=$('.number');
     var votebuildings=$('.p1');
@@ -145,32 +185,26 @@
     }
     extend(numbers);extend(votebuildings);extend(votenames);
     /*搜索*/
-    $('.inputbox input').bind('input propertychange' ,function(){
-        var that=this;
+    function hideshow(that){
         $('#drombox li').hide()
         for(var i=0;i<allvotes.length;i++){
             if($(allvotes[i]).html().indexOf($(that).val()) > -1){
                 $(allvotes[i]).parent('li').show();
             }
         }
+    }
+    $('.inputbox input').bind('input propertychange' ,function(){
+        var that=this;
+        /*当输入框的额内容发生变化时，自动进行搜索*/
+        hideshow(that);
         /*点击输入框右边的搜索键进行搜索*/
         $('#searchbox').on('click',function(){
-            $('#drombox li').hide()
-            for(var i=0;i<allvotes.length;i++){
-                if($(allvotes[i]).html().indexOf($(that).val()) > -1){
-                    $(allvotes[i]).parent('li').show();
-                }
-            }
+            hideshow(that);
         });
         /*按键盘上的搜索键进行搜索*/
         $(document).keydown(function(e){
             if(e.keyCode == 13){
-                $('#drombox li').hide()
-                for(var i=0;i<allvotes.length;i++){
-                    if($(allvotes[i]).html().indexOf($(that).val()) > -1){
-                        $(allvotes[i]).parent('li').show();
-                    }
-                }
+                hideshow(that);
             }
         })
         /*如果把input里面的内容全部删除，显示全部*/

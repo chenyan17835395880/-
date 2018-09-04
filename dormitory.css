@@ -12,11 +12,33 @@
         letter-spacing:0.01rem;
     }
     /*banner*/
-    .banner {
-        width: 100%;
-        height: 3.8rem;
-        background: url('img/banner.png') no-repeat center/cover;
+    .banner,.banner li {
+        width: 100% ;
+        height: 3.8rem !important;
+        overflow: hidden;
+        /*background: url('img/banner.png') no-repeat center/cover;*/
     }
+    .banner li img{
+        width:100%;
+        height:100%;
+    }
+    .hiSlider-item{
+        float: left;
+    }
+    .hiSlider-pages{
+        text-align: center !important;
+        bottom:0 !important;
+    }
+    .hiSlider-title{
+        display:none
+    }
+    .hiSlider-pages a.active{
+        background: #FF5E61 !important;
+    }
+    .hiSlider-pages a{
+        background: #fff !important;
+    }
+
     /*大盒子*/
     #mesbox{padding:0 0.18rem 0.18rem 0.18rem;}
     /*投票信息*/
@@ -263,6 +285,65 @@
         border-radius:0.5rem;
         text-align: center;
         line-height: 0.62rem;
+    }
+    /*投票弹框*/
+    #voteclick {
+        font-size: 0.3rem;
+        text-align: center;
+        line-height: 1.7rem;
+        width: 80%;
+        height: 2.6rem;
+        padding-left:0.2rem;
+        padding-right:0.2rem;
+        background: #fff;
+        border-radius: 0.1rem;
+        box-shadow: 0rem 0rem 0.2rem #F9CFD3;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 9999;
+        display:none;
+    }
+    #bigzhe {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display:none;
+    }
+    .close{
+        width:100%;
+        height:0.68rem;
+        overflow:hidden;
+    }
+    .close img{
+        width:0.36rem;
+        height:0.36rem;
+        float:right;
+        margin-top:0.16rem;
+    }
+    .tips{
+        height:0.5rem;
+        font-size:0.3rem;
+        text-align: center;
+        color:#333333;
+        line-height: 0.36rem;
+    }
+    .tipsmes{
+        height:0.8rem;
+        text-align: center;
+        color:#8E8E93;
+        font-size:0.28rem;
+        line-height: 0.4rem;
+        margin-top:0.1rem;
     }
 
 
