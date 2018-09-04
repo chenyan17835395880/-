@@ -26,11 +26,11 @@
         float: left;
     }
     .hiSlider-pages{
-        text-align: center !important;
         bottom:0 !important;
+        text-align:  justify !important;
     }
     .hiSlider-title{
-        display:none
+        display:none;
     }
     .hiSlider-pages a.active{
         background: #FF5E61 !important;
