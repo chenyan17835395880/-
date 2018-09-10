@@ -15,26 +15,29 @@
     <!--<meta name="MobileOptimized" content="width">-->
     <title>宿舍争霸</title>
     <script src="js/rem.js"></script>
-    <link rel="stylesheet" href="dormitory.css">
+    <link rel="stylesheet" href="css/dormitory.css">
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <!--轮播图-->
-    <link rel="stylesheet" href="jquery.hiSlider.min.css">
+    <link rel="stylesheet" href="css/jquery.hiSlider.min.css">
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <!--图片放大-->
-    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <script src="js/swiper.min.js"></script>
 </head>
 <body>
 <!--banner-->
-<ul class="banner hiSlider hiSlider3">
-    <li data-title="" class="hiSlider-item"><img src="img/4.jpg" alt=""></li>
-    <li data-title="" class="hiSlider-item"><img src="img/banner.png" alt=""></li>
-    <li data-title="" class="hiSlider-item"><img src="img/形状18@2x.png" alt=""></li>
-    <li data-title="" class="hiSlider-item"><img src="img/形状18拷贝2@2x.png" alt=""></li>
-    <li data-title="" class="hiSlider-item"><img src="img/形状18拷贝@2x.png" alt=""></li>
-    <li data-title="" class="hiSlider-item"><img src="img/4.jpg" alt=""></li>
-    <li data-title="" class="hiSlider-item"><img src="img/banner.png" alt=""></li>
-</ul>
+<section class="pc-banner banner" id="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-center none-effect"><a href="#"><img src="imgs/4.jpg" ></a></div>
+            <div class="swiper-slide"><a href="#"><img src="imgs/banner.png" ></a></div>
+            <div class="swiper-slide"><a href="#"><img src="imgs/形状18@2x.png" ></a></div>
+            <div class="swiper-slide"><a href="#"><img src="imgs/形状18拷贝2@2x.png" ></a></div>
+            <div class="swiper-slide"><a href="#"><img src="imgs/形状18拷贝@2x.png" ></a></div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</section>
 <div id="mesbox">
     <!--投票信息-->
     <ul id="votemes">
@@ -51,34 +54,72 @@
             <p>累计访问</p>
         </li>
     </ul>
-    <!--奖项说明-->
-    <div id="prize">
-        <div class="top">
-            <div class="topleft">
-                <img src="img/border.png" alt="">
-                <div class="text">奖项说明</div>
-            </div>
-        </div>
-        <ul id="prizemes">
-            <li><span>一等奖：</span><span>打算将积极回复就会返回韩国韩国国会</span></li>
-            <li><span>二等奖：</span><span>打算将积极回复就会返回韩国大的地方烦烦烦烦烦烦韩国国会</span></li>
-            <li><span>三等奖：</span><span>打算将积极回复就会返回v放大法如图5韩国韩国国会</span></li>
+    <!--参赛列表-->
+    <ul class="three">
+        <li id="joinone" class="activityactive">参赛说明<span class="activityspan"></span></li>
+        <li id="jointwo">活动规则<span></span></li>
+        <li id="jointhree">奖项说明<span></span></li>
+    </ul>
+    <!--参赛说明-->
+    <div id="joinactivity">
+        <ul id="joinmes">
+            <li>1、打算将积极回复就会返回韩国韩国国会</li>
+            <li>2、打算将积极回复就会返回韩国大的地方烦</li>
+            <li>3、打算将积极回复就会返回韩国大的地方烦烦烦</li>
         </ul>
+        <!--报名-->
+        <div class="baomingbtn"><a href="signup.html">报名</a></div>
+        <!--检测橙子是否已购-->
+        <div id="orangetip">
+            <div class="top"><span>报名需要<img src="imgs/orange.png" alt="">188个，系统检测到您的橙子仓库<img src="imgs/orange.png" alt="">数量不足， 报名表信息已保存，快联系舍友 打赏你吧。</span></div>
+            <div class="bottom">确定</div>
+        </div>
+        <!--查看宿舍信息-->
+        <!--<div id="departmentmes">我的宿舍</div>-->
+        <div id="departmentbox">
+            <div class="close"><img src="imgs/close.png" alt=""></div>
+            <div class="title">我的宿舍</div>
+            <ul>
+                <li>美少女组合&nbsp;&nbsp;<span>南风四斋8621</span></li>
+                <li><label for="">宿舍编号：</label><span>8621</span></li>
+                <li><label for="">当前票数：</label><span>8621</span></li>
+                <!--<li><label for="">当前排名：</label><span>8621</span></li>-->
+                <li>
+                    <label for="">宿舍成员：</label>
+                    <ul>
+                        <li>张三</li>
+                        <li>李四</li>
+                        <li>问问</li>
+                        <li>谷歌</li>
+                        <li>请求</li>
+                        <li>看看</li>
+                        <li>泡泡</li>
+                        <li>嘿嘿</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
     <!--活动规则-->
-    <div id="activity">
-        <div class="top">
-            <div class="topleft">
-                <img src="img/border.png" alt="">
-                <div class="text">活动规则</div>
-            </div>
-        </div>
+    <div id="activity" class="morebox">
         <ul id="prizemes1">
             <li><span>投票时间：</span><span>打算将积极回复就会返回韩国韩国国会</span></li>
             <li><span>投票规则：</span><span>打算将积极回复就会返回韩国大的地方烦烦烦烦烦烦韩国国会</span></li>
+            <li><span>投票规则：</span><span>打算将积极回复就会返回韩国大的地方烦烦烦烦烦烦韩国国会</span></li>
+            <li><span>投票规则：</span><span>打算将积极回复就会返回韩国大的地方烦烦烦烦烦烦韩国国会</span></li>
         </ul>
-        <div class="more"><span class="span1">展开更多</span>&nbsp;<span class="icon">></span>&nbsp;</div>
+        <div class="more more1"><span class="span1">展开更多</span>&nbsp;<span class="icon"><img src="imgs/bottom.png" alt=""></span>&nbsp;</div>
     </div>
+    <!--奖项说明-->
+    <div id="prize" class="morebox">
+        <ul id="prizemes">
+            <li><span>一等奖：</span><span>打算将积极回复就会返回韩国韩国国会</span></li>
+            <li><span>二等奖：</span><span>打算将积极回复就会返回韩国大的地方烦</span></li>
+            <li><span>三等奖：</span><span>打算将积极回复就会返回v放大法如图5韩国</span></li>
+        </ul>
+        <div class="more more1"><span class="span1">展开更多</span>&nbsp;<span class="icon"><img src="imgs/bottom.png" alt=""></span>&nbsp;</div>
+    </div>
+
     <!--投票区-->
     <div id="voteAnddepartmen">
         <div class="votetext">投票区</div>
@@ -91,61 +132,67 @@
         <!--宿舍列表-->
         <ul id="drombox">
             <li>
-                <div class="number">1112号</div>
-                <div class="imgbox"><img src="img/4.jpg" alt=""></div>
-                <span class="p1">美少女组合</span>
+                <div class="number">11226</div>
+                <div class="imgbox"><img src="imgs/4.jpg" alt=""></div>
+                <span class="p1">美少女好组合</span>
                 <span class="p2">南风四斋8206</span>
                 <div class="votebtn">
+                    <span>NO.<span>1</span></span>
                     <span>1123票</span>
-                    <div class="div">投票</div>
                 </div>
+                <div class="div vote">投票</div>
+                <!--<div class="jijin">宿舍基金3333元</div>-->
             </li>
             <li>
-                <div class="number">1113号</div>
-                <div class="imgbox"><img src="img/形状18@2x.png" alt=""></div>
-                <span class="p1">蛇精病</span>
-                <span class="p2">南风五斋10206</span>
+                <div class="number">10126</div>
+                <div class="imgbox"><img src="imgs/4.jpg" alt=""></div>
+                <span class="p1">美少女萍组合</span>
+                <span class="p2">南风一斋8206</span>
                 <div class="votebtn">
+                    <span>NO.<span>1</span></span>
                     <span>1123票</span>
-                    <div class="div">投票</div>
                 </div>
+                <div class="div vote">投票</div>
             </li>
             <li>
-                <div class="number">1216号</div>
-                <div class="imgbox"><img src="img/border.png" alt=""></div>
-                <span class="p1">经典之家</span>
-                <span class="p2">南风四斋9612</span>
+                <div class="number">13126</div>
+                <div class="imgbox"><img src="imgs/4.jpg" alt=""></div>
+                <span class="p1">美少女个组合</span>
+                <span class="p2">南风四斋8206</span>
                 <div class="votebtn">
+                    <span>NO.<span>1</span></span>
                     <span>1123票</span>
-                    <div class="div">投票</div>
                 </div>
+                <div class="div vote">投票</div>
             </li>
             <li>
-                <div class="number">1420号</div>
-                <div class="imgbox"><img src="img/形状18拷贝@2x.png" alt=""></div>
-                <span class="p1">群居动物</span>
-                <span class="p2">南风一斋1206</span>
+                <div class="number">14126</div>
+                <div class="imgbox"><img src="imgs/4.jpg" alt=""></div>
+                <span class="p1">美少女是组合</span>
+                <span class="p2">南风三斋8206</span>
                 <div class="votebtn">
+                    <span>NO.<span>40</span></span>
                     <span>1123票</span>
-                    <div class="div">投票</div>
                 </div>
+                <div class="div vote">投票</div>
             </li>
             <li>
-                <div class="number">1112号</div>
-                <div class="imgbox"><img src="img/形状18拷贝2@2x.png" alt=""></div>
-                <span class="p1">美少女战士</span>
-                <span class="p2">南风二斋6206</span>
+                <div class="number">15126</div>
+                <div class="imgbox"><img src="imgs/4.jpg" alt=""></div>
+                <span class="p1">美少女组合5</span>
+                <span class="p2">南风四斋8206</span>
                 <div class="votebtn">
+                    <span>NO.<span>99</span></span>
                     <span>1123票</span>
-                    <div class="div">投票</div>
                 </div>
+                <div class="div vote">投票</div>
             </li>
         </ul>
     </div>
 </div>
 <!--投票成功提示-->
 <div id="voteclick">
-    <div class="close"><img src="img/close.png" alt=""></div>
+    <div class="close"><img src="imgs/close.png" alt=""></div>
     <div class="tips">投票成功</div>
     <div class="tipsmes">感谢水墨河东为大家提供的文创T恤和电影票等奖品</div>
 </div>
@@ -159,6 +206,8 @@
     </div>
     <div class="swiper-pagination2"></div>
 </div>
+<!--返回顶部-->
+<a href="#banner" id="goTop"><img src="imgs/top1.png" alt=""></a>
 
 <script src="http://www.jq22.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/jquery.hiSlider.min.js"></script>
@@ -167,15 +216,16 @@
     /*宿舍列表*/
     function render(){
         var str='';
-        str+='<li><div class="number">1112号</div><div class="imgbox"><img src="img/形状18拷贝2@2x.png" alt=""></div><span class="p1">美少女战士</span><span class="p2">南风二斋6206</span><div class="votebtn"><span>1123票</span><div class="div">投票</div></div></li>';
+        str+='<li><div class="number">11126</div><div class="imgbox"><img src="imgs/4.jpg" alt=""></div><span class="p1">美少女组合</span><span class="p2">南风四斋8206</span><div class="votebtn"><span>NO.<span>1</span></span><span>1123票</span></div><div class="div">投票</div></li>';
 
         return str;
     }
+    /*上拉刷新*/
     $('#mesbox').dropload({
         scrollArea : window,
         domDown : {
             domClass   : 'dropload-down',
-            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domRefresh : '<div class="drooad-refresh">↑上拉加载更多</div>',
             domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
             domNoData  : '<div class="dropload-noData">暂无数据</div>'
         },
@@ -184,10 +234,31 @@
                $('#drombox').append(render());
                // 每次数据加载完，必须重置
                me.resetload();
-           },1000);
+           },1800);
         }
     });
 
+    /*报名按钮*/
+   /* $('.baomingbtn a').click(function(){
+        /!*判断橙子够不够 *!/
+        $('#orangetip').css('display','block')
+        $('#bigzhe').css('display','block');
+        /!*$(this).prop('href','signup.html')*!/
+    });*/
+    $('#orangetip .bottom').click(function(){
+        $('#orangetip').css('display','none')
+        $('#bigzhe').css('display','none')
+    });
+
+    /*我的宿舍*/
+    $('#departmentmes').click(function(){
+        $('#departmentbox').css({'display':'block'});
+        $('#bigzhe').css('display','block');
+    });
+    $('#departmentbox .close').click(function(){
+        $('#departmentbox').css('display','none')
+        $('#bigzhe').css('display','none')
+    });
 
     /*点击查看大图*/
     $(document).ready(function(){
@@ -196,8 +267,8 @@
             loop: false,
             pagination: '.swiper-pagination2',
         })
-        $("#drombox").on("click", "li img", function() {
-                var imgBox = $(this).parents("li").find("img");
+        $("#drombox").on("click", "li div img", function() {
+                var imgBox = $(this).parents("div").find("img");
                 var i = $(imgBox).index(this);
                 $(".big_img .swiper-wrapper").html("");
                 for(var j = 0 ,c = imgBox.length; j < c ;j++){
@@ -223,30 +294,59 @@
             });
     });
     /*调起大图 E*/
+
     /*轮播*/
-    $('.hiSlider3').hiSlider({
-        isFlexible: true,
-        isSupportTouch: true,
-        titleAttr: function(curIdx){
-            return $('img', this).attr('alt');
+    var swiper = new Swiper('.swiper-container',{
+        autoplay:3000,
+        speed:1000,
+        loop:true,
+        centeredSlides : true,
+        autoplayDisableOnInteraction : false,
+        slidesPerView:2,
+        pagination : '.swiper-pagination',
+        paginationClickable:true,
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        onInit:function(swiper){
+            swiper.slides[2].className="swiper-slide swiper-slide-active";//第一次打开不要动画
+        },
+        breakpoints: {
+            668: {
+                slidesPerView: 1,
+            }
         }
     });
-    $('.hiSlider-pages').css({'left':'50%','marginLeft':-$('.hiSlider-pages').width()/2})
+    /*轮播鼠标移入图片，停止轮播*/
+    $('.swiper-container img').mouseenter(function () {
+        swiper.stopAutoplay();
+    });
+    /*鼠标移出图片，继续轮播*/
+    $('.swiper-container img').mouseleave(function () {
+        swiper.startAutoplay();
+    })
+    $('.swiper-pagination').css({'marginLeft':-$('.swiper-pagination').width()/2});
+
+
     /*投票成功弹窗*/
     $('#bigzhe').click(function(){
         $('#voteclick').css('display','none');
-        $('#bigzhe').css('display','none')
+        $('#bigzhe').css('display','none');
+        $('#orangetip').css('display','none');
+        $('#departmentbox').css('display','none')
     })
     $('.close').click(function(){
         $('#voteclick').css('display','none');
         $('#bigzhe').css('display','none')
     })
-    $('#drombox').on('click','.votebtn .div',function(){
+    $('#drombox').on('click','li .vote',function(){
         $('#voteclick').css('display','block');
         $('#bigzhe').css('display','block');
         $(this).html('已投票');
-        $(this).removeClass('div');
-    })
+        $(this).removeClass('vote')
+    });
+    $('#voteclick').css({'marginTop':-$('#voteclick').outerHeight()/2})
+
+
     /*投票区的搜索*/
     var numbers=$('.number');
     var votebuildings=$('.p1');
@@ -286,25 +386,63 @@
         if($(that).val() == ''){
             $('#drombox li').show()
         }
-    })
-    /*查看更多的活动信息*/
-    var flag=false;
-    $('.more').on('click',function () {
-        if(flag==false){
-            $(this).prev().css({'overflow':'visible','height':'auto'});
-            $(this).children('.span1').html('收起');
-            $(this).children('.icon').css({'transform':'rotate(-90deg)','display':'inline-block'})
-            flag=true;
-        }else if(flag==true){
-            $(this).prev().css({'overflow':'hidden','height':'1.2rem'});
-            $(this).children('.span1').html('展开更多');
-            $(this).children('.icon').css({'transform':'rotate(90deg)','display':'inline-block'})
-            flag=false;
-        }
     });
+
+    /*切换参赛列表*/
+    $('.three li').click(function(){
+        $(this).siblings('li').removeClass('activityactive');
+        $(this).siblings('li').children('span').removeClass('activityspan');
+        $(this).removeClass('activityactive');
+        $(this).addClass('activityactive');
+        $(this).children('span').removeClass('activityspan');
+        $(this).children('span').addClass('activityspan');
+        if($(this).attr('id') == 'joinone'){
+            $('#joinactivity').css('display','flex');
+            $('#activity').css('display','none');
+            $('#prize').css('display','none');
+        }else if($(this).attr('id') == 'jointwo'){
+            $('#activity').css('display','flex');
+            $('#joinactivity').css('display','none');
+            $('#prize').css('display','none');
+        }else if($(this).attr('id') == 'jointhree'){
+            $('#prize').css('display','flex');
+            $('#joinactivity').css('display','none');
+            $('#activity').css('display','none');
+        }
+    })
+
+
+    /*查看更多的活动信息*/
+    $('.morebox').on('click','.more1',function () {
+        $(this).prev().css({'overflow':'visible','height':'auto'});
+        $(this).parent().css({'overflow':'visible','height':'auto'});
+        $(this).children('.span1').html('收起');
+        $(this).children('.icon').children('img').attr('src','imgs/top.png')
+        $(this).addClass('shouqi')
+        $(this).removeClass('more1')
+    });
+    $('.morebox').on('click','.shouqi',function(){
+        $(this).prev().css({'overflow':'hidden','height':'1.6rem'});
+        $(this).parent().css({'overflow':'hidden','height':'2.26rem'});
+        $(this).children('.span1').html('展开更多');
+        $(this).children('.icon').children('img').attr('src','imgs/bottom.png')
+        $(this).removeClass('shouqi')
+        $(this).addClass('more1')
+    })
+
+    /*返回顶部*/
+    window.onscroll=function() {
+        if ($(window).scrollTop() > 300) {
+            $('#goTop').show();
+        } else {
+            $('#goTop').hide();
+        }
+    }
+
 
 </script>
 </body>
+
 </html>
 
 
